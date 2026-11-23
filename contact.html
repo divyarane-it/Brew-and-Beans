@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bean | Contact</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            color: #29100c;
+
+            background-color: #fff8ed;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+                                  
+
+        header {
+            background-color: #29100c;
+
+            color: white;
+
+            display: grid;
+
+            grid-template-columns: 1fr 2fr 2fr;
+
+            align-items: center;
+
+            padding: 12px 5%;
+
+            border-bottom: 5px solid #c87941;
+        }
+
+        .logo {
+            width: 65px;
+        }
+
+        .logo img {
+            width: 65px;
+
+            height: 65px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid #eed6b5;
+        }
+
+        .brand {
+            text-align: center;
+        }
+
+        .brand h1 {
+            letter-spacing: 3px;
+
+            font-size: 28px;
+        }
+
+        .brand p {
+            color: #eed6b5;
+
+            font-size: 12px;
+
+            margin-top: 4px;
+        }
+
+        nav {
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+
+            font-weight: bold;
+
+            padding: 8px 5px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e6a56e;
+
+            border-bottom: 2px solid #e6a56e;
+        }
+
+
+       
+
+        .page-heading {
+            background-color: #d1ba9b;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+        .small-title {
+            color: #a85f34;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .page-heading h1 {
+            font-size: 55px;
+
+            margin-bottom: 15px;
+        }
+
+        .page-heading p:last-child {
+            font-size: 18px;
+
+            color: #5b4438;
+
+            line-height: 1.6;
+        }
+
+
+
+        .contact-section {
+            padding: 70px 8%;
+
+            background-color: #fff8ed;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .contact-card {
+            background-color: #f8f1e7;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            border-radius: 20px;
+
+            border-bottom: 5px solid #c87941;
+
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 5px 5px 0 #d1ba9b;
+        }
+
+        .contact-card span {
+            font-size: 40px;
+        }
+
+        .contact-card h2 {
+            margin: 15px 0 10px;
+        }
+
+        .contact-card p {
+            color: #6d5146;
+
+            line-height: 1.7;
+
+            word-break: break-word;
+        }
+
+
+       
+
+        .hours {
+            background-color: #eed6b5;
+
+            padding: 70px 20px;
+        }
+
+        .hours-box {
+            background-color: #fff8ed;
+
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 8px 8px 0 #8d6148;
+        }
+
+        .hours-box h2 {
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .hours-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px dashed #c4a98d;
+        }
+
+        .hours-row strong {
+            color: #a85f34;
+
+            text-align: right;
+        }
+
+
+        .contact-message {
+            text-align: center;
+
+            background-color: #f8f1e7;
+
+            padding: 80px 20px;
+        }
+
+        .contact-message span {
+            font-size: 55px;
+        }
+
+        .contact-message h2 {
+            font-size: 40px;
+
+            margin: 15px 0;
+        }
+
+        .contact-message p {
+            color: #6d5146;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+
+            background-color: #29100c;
+
+            color: white;
+
+            padding: 13px 24px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-top: 20px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c87941;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #29100c;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #eed6b5;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+
+            color: #eed6b5;
+        }
+
+        .footer-links a:hover {
+            color: #e6a56e;
+        }
+
+        .copyright {
+            font-size: 13px;
+
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+            .logo {
+                margin: auto;
+            }
+
+            nav {
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-heading h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 15px 10px;
+            }
+
+            .brand h1 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .page-heading {
+                padding: 60px 20px;
+            }
+
+            .page-heading h1 {
+                font-size: 36px;
+            }
+
+            .page-heading p:last-child {
+                font-size: 15px;
+            }
+
+            .contact-section {
+                padding: 55px 15px;
+            }
+
+            .contact-container {
+                gap: 18px;
+            }
+
+            .contact-card {
+                padding: 30px 15px;
+            }
+
+            .contact-card h2 {
+                font-size: 22px;
+            }
+
+            .contact-card p {
+                font-size: 14px;
+            }
+
+            .hours {
+                padding: 55px 15px;
+            }
+
+            .hours-box {
+                padding: 22px 18px;
+
+                box-shadow: 5px 5px 0 #8d6148;
+            }
+
+            .hours-box h2 {
+                font-size: 25px;
+            }
+
+            .hours-row {
+                font-size: 13px;
+
+                gap: 10px;
+            }
+
+            .hours-row strong {
+                font-size: 12px;
+            }
+
+            .contact-message {
+                padding: 60px 20px;
+            }
+
+            .contact-message h2 {
+                font-size: 30px;
+            }
+
+            .contact-message p {
+                font-size: 15px;
+            }
+
+            .footer-links a {
+                margin: 0 6px;
+
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="assets/logos/cafe.jpg"
+                 alt="Brew and Bean Logo">
+
+        </div>
+
+        <div class="brand">
+
+            <h1>
+                BREW & BEAN
+            </h1>
+
+            <p>
+                Fresh Brews • Good Vibes
+            </p>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="menu.html">
+                MENU
+            </a>
+
+            <a href="contact.html" class="active">
+                CONTACT
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE HEADING -->
+
+    <section class="page-heading">
+
+        <p class="small-title">
+            WE'D LOVE TO MEET YOU &#10084;
+        </p>
+
+        <h1>
+            COME SAY HI!
+        </h1>
+
+        <p>
+            Drop by for a cup of coffee,
+            a quick bite or just some good vibes.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT DETAILS -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+
+                <span>
+                    &#128205;
+                </span>
+
+                <h2>
+                    Find Us
+                </h2>
+
+                <p>
+                    Mumbai,<br>
+                    Maharashtra, India
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <span>
+                    &#128222;
+                </span>
+
+                <h2>
+                    Call Us
+                </h2>
+
+                <p>
+                    +91 9527791947
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <span>
+                    &#128233;
+                </span>
+
+                <h2>
+                    Email Us
+                </h2>
+
+                <p>
+                    raned1404@gmail.com
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPENING HOURS -->
+
+    <section class="hours">
+
+        <div class="hours-box">
+
+            <h2>
+                &#128336; Opening Hours
+            </h2>
+
+            <div class="hours-row">
+
+                <span>Monday</span>
+
+                <strong>
+                    9:00 AM – 9:00 PM
+                </strong>
+
+            </div>
+
+            <div class="hours-row">
+
+                <span>Tuesday</span>
+
+                <strong>
+                    9:00 AM – 9:00 PM
+                </strong>
+
+            </div>
+
+            <div class="hours-row">
+
+                <span>Wednesday</span>
+
+                <strong>
+                    9:00 AM – 9:00 PM
+                </strong>
+
+            </div>
+
+            <div class="hours-row">
+
+                <span>Thursday</span>
+
+                <strong>
+                    9:00 AM – 9:00 PM
+                </strong>
+
+            </div>
+
+            <div class="hours-row">
+
+                <span>Friday</span>
+
+                <strong>
+                    9:00 AM – 10:00 PM
+                </strong>
+
+            </div>
+
+            <div class="hours-row">
+
+                <span>Saturday</span>
+
+                <strong>
+                    9:00 AM – 10:00 PM
+                </strong>
+
+            </div>
+
+            <div class="hours-row">
+
+                <span>Sunday</span>
+
+                <strong>
+                    10:00 AM – 8:00 PM
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="contact-message">
+
+        <span>
+            &#9749;
+        </span>
+
+        <h2>
+            Good Coffee Is Always<br>
+            A Good Idea.
+        </h2>
+
+        <p>
+            Bring your friends. Bring your laptop.
+            Bring yourself. We've got the coffee.
+        </p>
+
+        <a href="menu.html" class="button">
+            See Our Menu →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+            BREW & BEAN &#9749;
+        </h2>
+
+        <p>
+            Fresh Brews • Good Vibes
+        </p>   
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Brew & Bean Cafe | All Rights Reserved
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

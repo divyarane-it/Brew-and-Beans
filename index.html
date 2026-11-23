@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bean | Home</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8ed;
+            color: #29100c;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #29100c;
+            color: white;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+
+            align-items: center;
+
+            padding: 12px 5%;
+
+            border-bottom: 5px solid #c87941;
+        }
+
+        .logo {
+            width: 65px;
+        }
+
+        .logo img {
+            width: 65px;
+            height: 65px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid #eed6b5;
+        }
+
+        .brand {
+            text-align: center;
+        }
+
+        .brand h1 {
+            font-size: 28px;
+            letter-spacing: 3px;
+        }
+
+        .brand p {
+            color: #eed6b5;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e6a56e;
+            border-bottom: 2px solid #e6a56e;
+        }
+
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            background-color: #d1ba9b;
+
+            min-height: 560px;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr 0.9fr;
+
+            align-items: center;
+
+            padding: 70px 9%;
+
+            gap: 50px;
+        }
+
+        .welcome-text {
+            position: relative;
+        }
+
+        .welcome-text::before {
+            content: "&#9749;";
+
+            position: absolute;
+
+            top: -55px;
+            left: -20px;
+
+            font-size: 45px;
+
+            opacity: 0.5;
+        }
+
+        .welcome-text .hello {
+            color: #8c4e2c;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .welcome-text h1 {
+            font-size: 62px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text h1 span {
+            color: #9c552e;
+        }
+
+        .welcome-text .description {
+            max-width: 500px;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #5c4337;
+        }
+
+        .welcome-image {
+            position: relative;
+        }
+
+        .welcome-image img {
+            height: 450px;
+
+            object-fit: cover;
+
+            border-radius: 50% 50% 15px 15px;
+
+            border: 8px solid #fff8ed;
+
+            box-shadow: 15px 15px 0 #8d6148;
+        }
+
+        .coffee-note {
+            position: absolute;
+
+            bottom: -25px;
+            left: -25px;
+
+            background-color: #29100c;
+
+            color: white;
+
+            padding: 18px 25px;
+
+            border-radius: 10px;
+
+            transform: rotate(-4deg);
+
+            box-shadow: 5px 5px 0 #c87941;
+        }
+
+        .coffee-note p {
+            color: #eed6b5;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+            display: inline-block;
+
+            background-color: #29100c;
+
+            color: white;
+
+            padding: 14px 26px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-top: 25px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c87941;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            text-align: center;
+
+            padding: 75px 10%;
+
+            background-color: #fff8ed;
+        }
+
+        .intro .coffee-symbol {
+            font-size: 45px;
+        }
+
+        .intro h2 {
+            font-size: 38px;
+            margin: 15px 0;
+        }
+
+        .intro p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #6d5146;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           TODAY'S PICK
+        ========================= */
+
+        .today {
+            background-color: #29100c;
+            color: white;
+            padding: 70px 9%;
+        }
+
+        .today-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            align-items: center;
+
+            gap: 50px;
+        }
+
+        .today-image img {
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 5px solid #eed6b5;
+        }
+
+        .today-text .label {
+            color: #e6a56e;
+
+            letter-spacing: 3px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .today-text h2 {
+            font-size: 45px;
+            margin: 15px 0;
+        }
+
+        .today-text h3 {
+            color: #eed6b5;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+        .today-text p {
+            color: #d8c5b4;
+
+            line-height: 1.7;
+
+            font-size: 16px;
+        }
+
+        .price {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            background-color: #c87941;
+
+            padding: 10px 18px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            padding: 70px 8%;
+
+            background-color: #eed6b5;
+
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .feature-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .feature {
+            background-color: #fff8ed;
+
+            padding: 30px 20px;
+
+            border-radius: 15px;
+
+            border: 2px dashed #c87941;
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 6px 6px 0 #8d6148;
+        }
+
+        .feature span {
+            font-size: 40px;
+        }
+
+        .feature h3 {
+            margin: 15px 0 10px;
+        }
+
+        .feature p {
+            color: #6d5146;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           ROTATING PHOTO SLIDER
+        ========================= */
+
+        .photo-section {
+            padding: 80px 5%;
+
+            background-color: #f8f1e7;
+
+            text-align: center;
+
+            overflow: hidden;
+        }
+
+        .photo-section h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .photo-section > p {
+            color: #6d5146;
+            margin-bottom: 45px;
+        }
+
+        .photo-slider {
+            width: 100%;
+
+            max-width: 1000px;
+
+            height: 390px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            perspective: 1000px;
+        }
+
+        .photo-track {
+            width: 250px;
+
+            height: 330px;
+
+            position: relative;
+
+            transform-style: preserve-3d;
+
+            animation: photoRotate 18s infinite linear;
+        }
+
+        .photo-card {
+            position: absolute;
+
+            width: 250px;
+
+            height: 330px;
+
+            padding: 10px;
+
+            background-color: #fff8ed;
+
+            border-radius: 18px;
+
+            box-shadow: 0 8px 20px rgba(41, 16, 12, 0.25);
+
+            overflow: hidden;
+
+            border: 3px solid #eed6b5;
+        }
+
+        .photo-card img {
+            width: 100%;
+
+            height: 265px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+        }
+
+        .photo-card h3 {
+            font-size: 17px;
+            margin-top: 12px;
+        }
+
+        .photo-card:nth-child(1) {
+            transform: rotateY(0deg) translateZ(330px);
+        }
+
+        .photo-card:nth-child(2) {
+            transform: rotateY(72deg) translateZ(330px);
+        }
+
+        .photo-card:nth-child(3) {
+            transform: rotateY(144deg) translateZ(330px);
+        }
+
+        .photo-card:nth-child(4) {
+            transform: rotateY(216deg) translateZ(330px);
+        }
+
+        .photo-card:nth-child(5) {
+            transform: rotateY(288deg) translateZ(330px);
+        }
+
+        @keyframes photoRotate {
+
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(-360deg);
+            }
+
+        }
+
+        .photo-track:hover {
+            animation-play-state: paused;
+        }
+
+
+        /* =========================
+           MINI LIVE STUDIO
+        ========================= */
+
+        .live-studio {
+            background-color: #1f0d09;
+
+            color: white;
+
+            padding: 80px 8%;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .live-studio::before {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border: 2px solid #70412c;
+
+            border-radius: 50%;
+
+            top: -100px;
+            right: -80px;
+        }
+
+        .live-studio::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border: 2px dashed #70412c;
+
+            border-radius: 50%;
+
+            bottom: -80px;
+            left: -50px;
+        }
+
+        .studio-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            align-items: center;
+
+            gap: 60px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .studio-image {
+            position: relative;
+        }
+
+        .studio-image img {
+            width: 100%;
+
+            height: 390px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 5px solid #eed6b5;
+
+            box-shadow: 12px 12px 0 #c87941;
+        }
+
+        .live-badge {
+            position: absolute;
+
+            top: 20px;
+            left: 20px;
+
+            background-color: #d62828;
+
+            color: white;
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .studio-label {
+            color: #e6a56e;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .studio-content h2 {
+            font-size: 45px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+        .studio-content h2 span {
+            color: #e6a56e;
+        }
+
+        .studio-content > p:not(.studio-label) {
+            color: #d8c5b4;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+        .studio-features {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .studio-features div {
+            background-color: #321712;
+
+            padding: 18px 12px;
+
+            border-radius: 12px;
+
+            border: 1px solid #553025;
+
+            transition: 0.3s;
+        }
+
+        .studio-features div:hover {
+            transform: translateY(-5px);
+
+            border-color: #c87941;
+        }
+
+        .studio-features span {
+            font-size: 28px;
+        }
+
+        .studio-features h3 {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .studio-features p {
+            color: #bda99c;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+        .studio-button {
+            display: inline-block;
+
+            background-color: #e6a56e;
+
+            color: #29100c;
+
+            padding: 13px 22px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-top: 25px;
+
+            transition: 0.3s;
+        }
+
+        .studio-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote {
+            background-color: #d1ba9b;
+
+            text-align: center;
+
+            padding: 75px 20px;
+        }
+
+        .quote span {
+            font-size: 40px;
+        }
+
+        .quote h2 {
+            max-width: 700px;
+
+            margin: 15px auto;
+
+            font-size: 36px;
+
+            line-height: 1.3;
+        }
+
+        .quote p {
+            color: #6d5146;
+            font-style: italic;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #29100c;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 8px;
+        }
+
+        footer > p {
+            color: #eed6b5;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #eed6b5;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #e6a56e;
+        }
+
+        .copyright {
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .logo {
+                margin: auto;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .welcome {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding: 60px 7%;
+            }
+
+            .welcome-text h1 {
+                font-size: 48px;
+            }
+
+            .welcome-text .description {
+                margin: auto;
+            }
+
+            .welcome-image img {
+                height: 320px;
+            }
+
+            .coffee-note {
+                left: 10px;
+            }
+
+            .today-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .today-image img {
+                height: 300px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            .studio-container {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                text-align: center;
+            }
+
+            .studio-image img {
+                height: 300px;
+            }
+
+            .studio-features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .studio-content > p:not(.studio-label) {
+                margin: auto;
+            }
+
+            .photo-slider {
+                height: 350px;
+            }
+
+            .photo-track {
+                transform: scale(0.8);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 15px 10px;
+            }
+
+            .brand h1 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .welcome {
+                padding: 55px 20px;
+            }
+
+            .welcome-text h1 {
+                font-size: 38px;
+            }
+
+            .welcome-text .description {
+                font-size: 16px;
+            }
+
+            .welcome-image img {
+                height: 250px;
+            }
+
+            .coffee-note {
+                position: relative;
+
+                left: 0;
+                bottom: 0;
+
+                margin: 20px auto 0;
+
+                width: fit-content;
+            }
+
+            .intro {
+                padding: 60px 20px;
+            }
+
+            .intro h2 {
+                font-size: 30px;
+            }
+
+            .intro p {
+                font-size: 15px;
+            }
+
+            .today {
+                padding: 60px 20px;
+            }
+
+            .today-text h2 {
+                font-size: 35px;
+            }
+
+            .today-text h3 {
+                font-size: 18px;
+            }
+
+            .feature-container {
+                gap: 18px;
+            }
+
+            .photo-section {
+                padding: 60px 10px;
+            }
+
+            .photo-section h2 {
+                font-size: 28px;
+            }
+
+            .photo-slider {
+                height: 300px;
+                overflow: hidden;
+            }
+
+            .photo-track {
+                transform: scale(0.65);
+            }
+
+            .studio-content h2 {
+                font-size: 32px;
+            }
+
+            .studio-features {
+                grid-template-columns: 1fr;
+            }
+
+            .studio-image img {
+                height: 250px;
+            }
+
+            .quote {
+                padding: 60px 20px;
+            }
+
+            .quote h2 {
+                font-size: 28px;
+            }
+
+            .footer-links a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="assets/logo.jpg.jpeg"
+                 alt="Brew and Bean Logo">
+
+        </div>
+
+        <div class="brand">
+
+            <h1>BREW & BEAN</h1>
+
+            <p>
+                Fresh Brews • Good Vibes
+            </p>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html" class="active">
+                HOME
+            </a>
+
+            <a href="menu.html">
+                MENU
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+        <div class="welcome-text">
+
+            <p class="hello">
+                HEY COFFEE LOVER! &#128075;
+            </p>
+
+            <h1>
+                Welcome to<br>
+                <span>Brew & Bean.</span>
+            </h1>
+
+            <p class="description">
+                A little café with a big love for coffee,
+                delicious food and moments worth remembering.
+            </p>
+
+            <a href="menu.html" class="button">
+                Explore Our Menu &#9749;
+            </a>
+
+        </div>
+
+
+        <div class="welcome-image">
+
+            <img src="assets/hero.jpg.jpeg"
+                 alt="Brew and Bean Coffee">
+
+            <div class="coffee-note">
+
+                <strong>
+                    TODAY'S VIBE
+                </strong>
+
+                <p>
+                    Coffee + Friends + Happiness
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <div class="coffee-symbol">
+            &#9749;
+        </div>
+
+        <h2>
+            Your everyday cup of happiness.
+        </h2>
+
+        <p>
+            Whether you're here for your morning coffee,
+            a quick snack between classes, or a long chat
+            with your favorite people, Brew & Bean is here
+            to make your day a little better.
+        </p>
+
+    </section>
+
+
+    <!-- TODAY'S PICK -->
+
+    <section class="today">
+
+        <div class="today-container">
+
+            <div class="today-image">
+
+                <img src="assets/coffee.jpeg"
+                     alt="Today's coffee">
+
+            </div>
+
+            <div class="today-text">
+
+                <p class="label">
+                    &#11088; TODAY'S PICK
+                </p>
+
+                <h2>
+                    Cappuccino
+                </h2>
+
+                <h3>
+                    Rich • Creamy • Comforting
+                </h3>
+
+                <p>
+                    A perfectly brewed coffee topped with
+                    creamy foam. Simple, classic and exactly
+                    what you need when you want a little
+                    break from the busy world.
+                </p>
+
+                <span class="price">
+                    ₹140
+                </span>
+
+                <br>
+
+                <a href="menu.html" class="button">
+                    See More Goodies →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <h2>
+            Why You'll Love It Here &#10084;
+        </h2>
+
+        <div class="feature-container">
+
+            <div class="feature">
+
+                <span>
+                    &#9749;
+                </span>
+
+                <h3>
+                    Fresh Coffee
+                </h3>
+
+                <p>
+                    Freshly brewed coffee made
+                    with love every single day.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <span>
+                    &#129374;
+                </span>
+
+                <h3>
+                    Tasty Bites
+                </h3>
+
+                <p>
+                    Sweet treats and delicious
+                    snacks for every craving.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <span>
+                    &#128715;
+                </span>
+
+                <h3>
+                    Cozy Vibes
+                </h3>
+
+                <p>
+                    A warm little space to relax,
+                    chat, study or just chill.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROTATING PHOTO SLIDER -->
+
+    <section class="photo-section">
+
+        <h2>
+            A Little Peek Inside &#128247;
+        </h2>
+
+        <p>
+            Good coffee looks even better with good vibes.
+        </p>
+
+        <div class="photo-slider">
+
+            <div class="photo-track">
+
+                <div class="photo-card">
+
+                    <img src="assets/p1.jpeg"
+                         alt="Coffee">
+
+                    <h3>
+                        Fresh Coffee &#9749;
+                    </h3>
+
+                </div>
+
+                <div class="photo-card">
+
+                    <img src="assets/p2.jpeg"
+                         alt="Cafe">
+
+                    <h3>
+                        Cozy Cafe &#128715;
+                    </h3>
+
+                </div>
+
+                <div class="photo-card">
+
+                    <img src="assets/p3.jpeg"
+                         alt="Coffee cup">
+
+                    <h3>
+                        Coffee Moments &#10084;
+                    </h3>
+
+                </div>
+
+                <div class="photo-card">
+
+                    <img src="assets/p4.jpeg"
+                         alt="Brew and Bean">
+
+                    <h3>
+                        Good Vibes &#10024;
+                    </h3>
+
+                </div>
+
+                <div class="photo-card">
+
+                    <img src="assets/p5.jpeg"
+                         alt="Fresh coffee">
+
+                    <h3>
+                        Live Studio &#127908;
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MINI LIVE STUDIO -->
+
+    <section class="live-studio">
+
+        <div class="studio-container">
+
+            <div class="studio-image">
+
+                <img src="assets/studio.jpg.jpeg"
+                     alt="Brew and Bean Mini Live Studio">
+
+                <div class="live-badge">
+                    &#128308; LIVE
+                </div>
+
+            </div>
+
+            <div class="studio-content">
+
+                <p class="studio-label">
+                    &#127908; SOMETHING EXTRA AT BREW & BEAN
+                </p>
+
+                <h2>
+                    Coffee by day.<br>
+                    <span>Good vibes on air.</span>
+                </h2>
+
+                <p>
+                    We have a mini live studio right inside
+                    our café! It's a cozy little creative
+                    space where musicians, podcasters,
+                    creators and friends can record,
+                    perform and share their moments.
+                </p>
+
+                <div class="studio-features">
+
+                    <div>
+
+                        <span>&#127908;</span>
+
+                        <h3>
+                            Recording
+                        </h3>
+
+                        <p>
+                            Record your music,
+                            podcast or content.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>&#127928;</span>
+
+                        <h3>
+                            Live Sessions
+                        </h3>
+
+                        <p>
+                            Small performances
+                            with a cozy audience.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>&#127911;</span>
+
+                        <h3>
+                            Creator Space
+                        </h3>
+
+                        <p>
+                            A relaxed place to
+                            create something new.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="contact.html"
+                   class="studio-button">
+                    Ask About The Studio →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
+
+    <section class="quote">
+
+        <span>
+            &#9749;
+        </span>
+
+        <h2>
+            "Life is too short for bad coffee."
+        </h2>
+
+        <p>
+            — Brew & Bean
+        </p>
+
+        <a href="contact.html" class="button">
+            Come Visit Us →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+            BREW & BEAN &#9749;
+        </h2>
+
+        <p>
+            Fresh Brews • Good Vibes
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Brew & Bean Cafe | All Rights Reserved
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

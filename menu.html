@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brew & Bean | Menu</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #29100c;
+            background-color: #fff8ed;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #29100c;
+            color: white;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+
+            align-items: center;
+
+            padding: 12px 5%;
+
+            border-bottom: 5px solid #c87941;
+        }
+
+        .logo {
+            width: 65px;
+        }
+
+        .logo img {
+            width: 65px;
+            height: 65px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid #eed6b5;
+        }
+
+        .brand {
+            text-align: center;
+        }
+
+        .brand h1 {
+            letter-spacing: 3px;
+            font-size: 28px;
+        }
+
+        .brand p {
+            color: #eed6b5;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e6a56e;
+            border-bottom: 2px solid #e6a56e;
+        }
+
+
+        /* =========================
+           PAGE HEADING
+        ========================= */
+
+        .page-heading {
+            background-color: #d1ba9b;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+        .small-title {
+            color: #a85f34;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .page-heading h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .page-heading p:last-child {
+            font-size: 18px;
+            color: #5b4438;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .menu-section {
+            padding: 65px 8%;
+            background-color: #fff8ed;
+        }
+
+        .beige-section {
+            background-color: #eed6b5;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+
+            font-size: 32px;
+
+            margin-bottom: 35px;
+        }
+
+        .menu-grid {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .menu-card {
+            background-color: #f8f1e7;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            display: grid;
+
+            grid-template-columns: 60px 1fr auto;
+
+            align-items: center;
+
+            gap: 15px;
+
+            position: relative;
+
+            border: 2px solid transparent;
+
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            border-color: #c87941;
+
+            transform: translateY(-5px);
+
+            box-shadow: 5px 5px 0 #d1ba9b;
+        }
+
+        .menu-card > span {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .menu-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .menu-card p {
+            color: #6d5146;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .menu-card strong {
+            color: #a85f34;
+            font-size: 18px;
+        }
+
+        .popular {
+            border: 2px solid #c87941;
+        }
+
+        .badge {
+            position: absolute;
+
+            top: -12px;
+            right: 15px;
+
+            background-color: #c87941;
+
+            color: white;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .menu-message {
+            text-align: center;
+
+            padding: 70px 20px;
+
+            background-color: #29100c;
+
+            color: white;
+        }
+
+        .menu-message h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .menu-message p {
+            color: #eed6b5;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+
+            background-color: white;
+
+            color: #29100c;
+
+            padding: 13px 24px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            margin-top: 20px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c87941;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #29100c;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #eed6b5;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #eed6b5;
+        }
+
+        .footer-links a:hover {
+            color: #e6a56e;
+        }
+
+        .copyright {
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+            .logo {
+                margin: auto;
+            }
+
+            nav {
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-heading h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 15px 10px;
+            }
+
+            .brand h1 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .page-heading {
+                padding: 60px 20px;
+            }
+
+            .page-heading h1 {
+                font-size: 36px;
+            }
+
+            .page-heading p:last-child {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .menu-section {
+                padding: 55px 15px;
+            }
+
+            .menu-section h2 {
+                font-size: 28px;
+            }
+
+            .menu-card {
+                grid-template-columns: 50px 1fr;
+
+                padding: 22px 15px;
+
+                gap: 12px;
+            }
+
+            .menu-card > span {
+                font-size: 32px;
+            }
+
+            .menu-card strong {
+                grid-column: 2;
+
+                margin-top: 5px;
+            }
+
+            .menu-card h3 {
+                font-size: 17px;
+            }
+
+            .menu-card p {
+                font-size: 13px;
+            }
+
+            .badge {
+                right: 10px;
+                font-size: 9px;
+            }
+
+            .menu-message {
+                padding: 60px 20px;
+            }
+
+            .menu-message h2 {
+                font-size: 28px;
+            }
+
+            .footer-links a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="assets/logos/cafe.jpg"
+                 alt="Brew and Bean Logo">
+
+        </div>
+
+        <div class="brand">
+
+            <h1>
+                BREW & BEAN
+            </h1>
+
+            <p>
+                Fresh Brews • Good Vibes
+            </p>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="menu.html" class="active">
+                MENU
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+
+    <section class="page-heading">
+
+        <p class="small-title">
+            MADE WITH LOVE &#9749;
+        </p>
+
+        <h1>
+            OUR MENU
+        </h1>
+
+        <p>
+            Good food, great coffee and something delicious
+            for every mood.
+        </p>
+
+    </section>
+
+
+    <!-- COFFEE -->
+
+    <section class="menu-section">
+
+        <h2>
+            &#9749; Coffee Corner
+        </h2>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+
+                <span>&#9749;</span>
+
+                <div>
+                    <h3>Cappuccino</h3>
+                    <p>Rich and creamy coffee.</p>
+                </div>
+
+                <strong>₹140</strong>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <span>&#129380;</span>
+
+                <div>
+                    <h3>Cold Coffee</h3>
+                    <p>Chilled and refreshing.</p>
+                </div>
+
+                <strong>₹150</strong>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <span>&#9749;</span>
+
+                <div>
+                    <h3>Café Latte</h3>
+                    <p>Smooth coffee with creamy milk.</p>
+                </div>
+
+                <strong>₹150</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BAKERY -->
+
+    <section class="menu-section beige-section">
+
+        <h2>
+            &#129374; Bakery Basket
+        </h2>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+
+                <span>&#129374;</span>
+
+                <div>
+                    <h3>Butter Croissant</h3>
+                    <p>Flaky and buttery pastry.</p>
+                </div>
+
+                <strong>₹110</strong>
+
+            </div>
+
+
+            <div class="menu-card popular">
+
+                <div class="badge">
+                    &#11088; POPULAR
+                </div>
+
+                <span>&#127856;</span>
+
+                <div>
+                    <h3>Cheesecake</h3>
+                    <p>Soft and delicious dessert.</p>
+                </div>
+
+                <strong>₹185</strong>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <span>&#127850;</span>
+
+                <div>
+                    <h3>Chocolate Cookies</h3>
+                    <p>Freshly baked chocolate cookies.</p>
+                </div>
+
+                <strong>₹80</strong>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <span>&#129374;</span>
+
+                <div>
+                    <h3>Pancake</h3>
+                    <p>Fluffy and delicious pancakes.</p>
+                </div>
+
+                <strong>₹160</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK BITES -->
+
+    <section class="menu-section">
+
+        <h2>
+            &#129386; Quick Bites
+        </h2>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+
+                <span>&#129386;</span>
+
+                <div>
+                    <h3>Cheese Sandwich</h3>
+                    <p>Fresh and crispy sandwich.</p>
+                </div>
+
+                <strong>₹150</strong>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <span>&#127839;</span>
+
+                <div>
+                    <h3>French Fries</h3>
+                    <p>Crispy and golden fries.</p>
+                </div>
+
+                <strong>₹100</strong>
+
+            </div>
+
+
+            <div class="menu-card popular">
+
+                <div class="badge">
+                    &#11088; FAVORITE
+                </div>
+
+                <span>&#127829;</span>
+
+                <div>
+                    <h3>Cheese Pizza</h3>
+                    <p>Hot pizza with melted cheese.</p>
+                </div>
+
+                <strong>₹220</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="menu-message">
+
+        <h2>
+            Can't Decide? &#128523;
+        </h2>
+
+        <p>
+            Don't worry. Just pick your favorite emoji
+            and order what makes you happy!
+        </p>
+
+        <a href="contact.html" class="button">
+            Visit Us →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+            BREW & BEAN &#9749;
+        </h2>
+
+        <p>
+            Fresh Brews • Good Vibes
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Brew & Bean Cafe | All Rights Reserved
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
